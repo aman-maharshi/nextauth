@@ -12,7 +12,7 @@ connectDb()
 export async function POST(request: NextRequest) {
   try {
     const requestBody = await request.json()
-    console.log(requestBody)
+    // console.log(requestBody, "requestBody")
     const { username, email, password } = requestBody
     // TODO: validate username, email, password
 
@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
       })
 
       const savedUser = await user.save()
-      console.log(savedUser, "savedUser")
+      // console.log(savedUser, "savedUser")
 
       // 3. Send verification email after user is saved
       await sendMail(email, "VERIFY", savedUser._id)
