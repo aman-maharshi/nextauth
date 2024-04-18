@@ -2,7 +2,6 @@
 
 import { connectDb } from '@/dbConfig/dbConfig'
 import User from "@/models/userModal"
-import { error } from 'console'
 import { NextRequest, NextResponse } from "next/server"
 import bcryptjs from "bcryptjs"
 import { sendMail } from '@/helpers/mailer'
