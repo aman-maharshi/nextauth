@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
       // 1. Find user with the token and token expiry
       const user = await User.findOne({
         verifyToken: token,
-        verifyTokenExpiry: { $gt: Date.now() }
+        verifyTokenExpiry: { $gt: Date.now() } // should be greater than Date.now()
       })
 
       if (!user) {
